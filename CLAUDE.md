@@ -2,34 +2,51 @@
 
 This project prioritizes simplicity, low maintenance, and pragmatic trade-offs.
 
-## Core expectations
+## Scope
 
-- Prefer the simplest solution that works
-- Favor mature, proven libraries over custom code
-- Avoid over-engineering and speculative abstractions (YAGNI)
-- Correctness over cleverness
-- Prefer reversible decisions
-- Delete code aggressively when no longer needed
+These principles apply to production and long-lived code.
+Prototypes, experiments, and one-off scripts may intentionally deviate for speed.
+When deviating, explain briefly in code or comments.
+
+## Priority order
+
+When principles conflict, prioritize in this order:
+1. Correctness (especially for money, security, data integrity)
+2. Simplicity and clarity
+3. Maintainability over time
+4. Reversibility of decisions
+5. Performance and optimization
+
+## Agent behavior
+
+- Do not invent abstractions without clear need
+- Prefer modifying existing code over introducing new layers
+- When adding complexity, explicitly justify why simpler options fail
+- Favor mature libraries over custom code for solved problems
+
+## When unsure
+
+If requirements, constraints, or trade-offs are unclear:
+- Ask clarifying questions before implementing
+- Propose a minimal approach and explain alternatives
+- Default to the simplest reversible solution
 
 ## State handling
 
-Systems involving money, credits, tokens, or audit requirements
-must preserve history and traceability. Mutable state in these
-domains is treated as dangerous. See `agent_docs/state_and_billing_rules.md`.
+Systems involving money, credits, tokens, or audit requirements must
+preserve history and traceability. See `agent_docs/state_and_billing_rules.md`.
 
-## When unsure, optimize for
+## Non-goals
 
-- Fewer lines of code
-- Less maintenance burden
-- Clear, boring solutions
-- Standard patterns any developer understands
+- Maximizing theoretical elegance
+- Implementing trendy architectures
+- Premature optimization
+- Speculative future-proofing
 
 ## Additional context
 
-For deeper guidance on specific topics, review relevant files in `agent_docs/`
-before implementing non-trivial changes:
-
-- `engineering_philosophy.md` - detailed principles and examples
-- `architecture_principles.md` - composability, correctness, agent design
-- `state_and_billing_rules.md` - event sourcing, ledgers, financial state
-- `decision_framework.md` - red flags, green flags, decision checklist
+For deeper guidance, review relevant files in `agent_docs/` before non-trivial changes:
+- `engineering_philosophy.md` - principles and examples
+- `architecture_principles.md` - composability, correctness
+- `state_and_billing_rules.md` - event sourcing, financial state
+- `decision_framework.md` - red/green flags, decision checklist
