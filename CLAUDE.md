@@ -124,7 +124,7 @@ Don't event-source your todo list. Do event-source your billing system.
 
 ### Good
 - Using a proven auth library instead of rolling your own
-- Choosing PostgreSQL because it's boring and works
+- Choosing classic databases like PostgreSQL/MySQL/MongoDB because we already know them and they work
 - Deleting unused code immediately
 - Writing a simple function instead of a class hierarchy
 - Using standard patterns that any developer understands
@@ -135,9 +135,6 @@ Don't event-source your todo list. Do event-source your billing system.
 - Creating abstractions for single use cases
 - Implementing trendy architecture patterns without clear need
 - Keeping "maybe useful later" code around
-
-### FYI
-- When you code react... (never use memo and callback!)
 
 
 ## Remember
