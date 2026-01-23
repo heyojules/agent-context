@@ -1,4 +1,4 @@
-# Engineering philosophy for software that lasts
+# Engineering manifest for software that lasts
 
 A core principle of enduring software engineering is that software should serve you, not the other way around.
 
